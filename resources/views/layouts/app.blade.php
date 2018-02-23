@@ -11,7 +11,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{--custom title--}}
-    <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
+    {{--<title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>--}}
+    <title>INVOICING SYSTEM</title>
 
     @include('includes.css.core')
     @include('includes.css.custom')
