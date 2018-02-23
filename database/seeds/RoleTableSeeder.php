@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use \Spatie\Permission\Models\Role;
+use \Spatie\Permission\Models\Permission;
 
 class RoleTableSeeder extends Seeder
 {
@@ -21,7 +23,7 @@ class RoleTableSeeder extends Seeder
         /**
          * Company role and permissions
          */
-        require_once 'role_permissions/company_role.php.php';
+        require_once 'role_permissions/company_role.php';
 
     }
 }

@@ -9,7 +9,15 @@
 use \Spatie\Permission\Models\Role;
 use \Spatie\Permission\Models\Permission;
 
-$client_role = new Role();
-$client_role->name = 'Company';
-$client_role->guard_name = 'web';
-$client_role->save();
+
+$company_role = new Role();
+$company_role->name = 'Company';
+$company_role->guard_name = 'web';
+$company_role->save();
+
+// Company Users
+$company_role->givePermissionTo(Permission::where('name', 'Manage Users')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Create Users')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Delete Users')->first());
+$company_role->givePermissionTo(Permission::where('name', 'View Users')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Update Users')->first());

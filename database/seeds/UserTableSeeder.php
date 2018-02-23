@@ -23,7 +23,7 @@ class UserTableSeeder extends Seeder
         $admin->assignRole(Role::where('name', 'Admin')->first());
 
         $company = new User();
-        $company->name = "Company A";
+        $company->name = "Comp";
         $company->email = "company@company.com";
         $company->password = "company";
         $company->remember_token = str_random(10);
