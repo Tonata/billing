@@ -35,5 +35,12 @@ $admin_role->givePermissionTo(Permission::where('name', 'Delete Roles')->first()
 $admin_role->givePermissionTo(Permission::where('name', 'View Roles')->first());
 $admin_role->givePermissionTo(Permission::where('name', 'Update Roles')->first());
 
+// Companies
+$admin_role->givePermissionTo(Permission::where('name', 'Manage Companies')->first());
+$admin_role->givePermissionTo(Permission::where('name', 'Create Companies')->first());
+$admin_role->givePermissionTo(Permission::where('name', 'Delete Companies')->first());
+$admin_role->givePermissionTo(Permission::where('name', 'View Companies')->first());
+$admin_role->givePermissionTo(Permission::where('name', 'Update Companies')->first());
+
 
 
