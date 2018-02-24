@@ -42,5 +42,11 @@ class PermissionTableSeeder extends Seeder
          */
 
         require_once 'model_permissions/user_model.php';
+
+        /**
+         * company permissions
+         */
+
+        require_once 'model_permissions/company_model.php';
     }
 }

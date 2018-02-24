@@ -28,18 +28,16 @@ class Vat extends Eloquent
 	protected $table = 'vat';
 
 	protected $casts = [
-		'percentage' => 'float',
-		'idCompany' => 'int'
+		'percentage' => 'float'
 	];
 
 	protected $fillable = [
 		'name',
-		'percentage',
-		'idCompany'
+		'percentage'
 	];
 
 	public function company()
 	{
-		return $this->belongsTo(\App\Models\Company::class, 'idCompany');
+		return $this->belongsTo(\App\Models\Company::class);
 	}
 }

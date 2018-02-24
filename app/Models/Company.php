@@ -40,70 +40,69 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Company extends Eloquent
 {
-	protected $casts = [
-		'idUser' => 'int',
-		'idDocument' => 'int'
-	];
+//	protected $casts = [
+//		'idUser' => 'int',
+//		'idDocument' => 'int'
+//	];
 
 	protected $fillable = [
 		'name',
 		'registration',
 		'email',
-		'bankAccNo',
-		'bankAccBranch',
-		'bankAccName',
-		'contactNumber',
-		'idUser',
-		'idDocument'
+		'bank_acc_no',
+		'bank_acc_branch',
+		'bank_acc_name',
+		'contact_number',
+        'vat_number'
 	];
 
 	public function user()
 	{
-		return $this->belongsTo(\App\Models\User::class, 'idUser');
+		return $this->belongsTo(\App\User::class);
 	}
 
 	public function document()
 	{
-		return $this->belongsTo(\App\Models\Document::class, 'idDocument');
+		return $this->belongsTo(\App\Models\Document::class);
 	}
 
 	public function company_notes()
 	{
-		return $this->hasMany(\App\Models\CompanyNote::class, 'idCompany');
+		return $this->hasMany(\App\Models\CompanyNote::class);
 	}
 
 	public function employees()
 	{
-		return $this->hasMany(\App\Models\Employee::class, 'idCompany');
+		return $this->hasMany(\App\Models\Employee::class);
 	}
 
 	public function invoices()
 	{
-		return $this->hasMany(\App\Models\Invoice::class, 'idCompany');
+		return $this->hasMany(\App\Models\Invoice::class);
 	}
 
 	public function licenses()
 	{
-		return $this->hasMany(\App\Models\License::class, 'idCompany');
+		return $this->hasMany(\App\Models\License::class);
 	}
 
 	public function proformas()
 	{
-		return $this->hasMany(\App\Models\Proforma::class, 'idCompany');
+		return $this->hasMany(\App\Models\Proforma::class);
 	}
 
 	public function purchase_orders()
 	{
-		return $this->hasMany(\App\Models\PurchaseOrder::class, 'idCompany');
+		return $this->hasMany(\App\Models\PurchaseOrder::class);
 	}
 
 	public function quotations()
 	{
-		return $this->hasMany(\App\Models\Quotation::class, 'idCompany');
+		return $this->hasMany(\App\Models\Quotation::class);
 	}
 
 	public function vats()
 	{
-		return $this->hasMany(\App\Models\Vat::class, 'idCompany');
+		return $this->hasMany(\App\Models\Vat::class);
 	}
 }

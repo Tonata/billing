@@ -42,6 +42,6 @@ class License extends Eloquent
 
 	public function company()
 	{
-		return $this->belongsTo(\App\Models\Company::class, 'idCompany');
+		return $this->belongsTo(\App\Models\Company::class);
 	}
 }
