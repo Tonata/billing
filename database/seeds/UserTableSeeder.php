@@ -28,8 +28,10 @@ class UserTableSeeder extends Seeder
         $company->password = "company";
         $company->remember_token = str_random(10);
         $company->save();
-        $admin->creator()->save($company);
+//        $admin->creator()->save($company);
         $company->assignRole(Role::where('name', 'Company')->first());
+
+
 
     }
 }

@@ -21,3 +21,17 @@ $company_role->givePermissionTo(Permission::where('name', 'Create Users')->first
 $company_role->givePermissionTo(Permission::where('name', 'Delete Users')->first());
 $company_role->givePermissionTo(Permission::where('name', 'View Users')->first());
 $company_role->givePermissionTo(Permission::where('name', 'Update Users')->first());
+
+// System Permissions
+$company_role->givePermissionTo(Permission::where('name', 'Manage Permissions')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Create Permissions')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Delete Permissions')->first());
+$company_role->givePermissionTo(Permission::where('name', 'View Permissions')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Update Permissions')->first());
+
+// User Roles
+$company_role->givePermissionTo(Permission::where('name', 'Manage Roles')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Create Roles')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Delete Roles')->first());
+$company_role->givePermissionTo(Permission::where('name', 'View Roles')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Update Roles')->first());
