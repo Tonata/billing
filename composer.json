@@ -10,7 +10,8 @@
         "laravel/framework": "5.6.*",
         "laravel/tinker": "~1.0",
         "reliese/laravel": "^0.0.13",
-        "spatie/laravel-permission": "^2.9"
+        "spatie/laravel-permission": "^2.9",
+        "laravelcollective/html": "~5.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
