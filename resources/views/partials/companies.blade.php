@@ -4,7 +4,8 @@
     @endslot
 
  <a href="{{ route('companies.create') }}" class="btn btn-success">Add Company</a>
-    Search: <input type="text" name="search">
+    {{--include the search input box--}}
+    {{--@include('partials.search')--}}
     @slot('thead')
         <th>Company Name</th>
         <th>Registration Number</th>

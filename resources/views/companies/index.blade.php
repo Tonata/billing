@@ -20,7 +20,6 @@
         <ul class="nav nav-tabs">
             @can('View Companies')
                 <liv class="{{ session('tab') == 'view_companies' || !session('tab') ? 'active': ''  }}">
-                    <a href =#companies data-toggle="tabs">Companies</a>
                 </liv>
             @endcan
         </ul>
