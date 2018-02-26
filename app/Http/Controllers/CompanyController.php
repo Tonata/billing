@@ -38,7 +38,9 @@ class CompanyController extends Controller
     public function create()
     {
         //
-        return view('companies.create');
+        $companies = Company::all();
+     //  dd(value($companies));
+        return view('companies.create',['companies'=>$companies]);
        // return view('companies.edit');
     }
 
@@ -94,13 +96,18 @@ class CompanyController extends Controller
         $this->validate($request, [
             'name'=>'required|max:200',
             'registration'=>'required',
-            'email'=>'required',
-            'license_expiry_date'=>'required'
+            'email'=>'required'
+
         ]);
 
-        $input = $request->only(['name', 'registration', 'email', 'license_expiry_date' ]);
+        $input = $request->only(['name', 'registration', 'email']);
 
         $company->fill($input)->save();
+
+        flash('Company', $company->name . ' updated.')->overlay();
+
+        return redirect()->route('companies.index');
+
     }
 
     /**

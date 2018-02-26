@@ -16,7 +16,7 @@
 
 @section('content')
     <div>
-        {{--@include ('flash::message')--}}
+        @include ('flash::message')
         <ul class="nav nav-tabs">
             @can('View Companies')
                 <liv class="{{ session('tab') == 'view_companies' || !session('tab') ? 'active': ''  }}">
