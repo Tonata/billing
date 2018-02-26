@@ -152,8 +152,12 @@ return [
          */
 
         Reliese\Coders\CodersServiceProvider::class,
+        // Permissions provider
         Spatie\Permission\PermissionServiceProvider::class,
+        // Form provide
         Collective\Html\HtmlServiceProvider::class,
+        // flash provider
+        Laracasts\Flash\FlashServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -213,6 +217,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Flash' => Laracasts\Flash\Flash::class,
 
     ],
 
