@@ -104,7 +104,8 @@ class CompanyController extends Controller
 
         $company->fill($input)->save();
 
-        flash('Company', $company->name . ' updated.')->overlay();
+        flash('Company '. $company->name . ' updated.');
+//        flash()->overlay('Company '. $company->name . ' updated.', 'Success');
 
         return redirect()->route('companies.index');
 
