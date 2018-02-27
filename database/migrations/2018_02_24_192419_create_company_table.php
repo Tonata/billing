@@ -23,6 +23,7 @@ class CreateCompanyTable extends Migration
             $table->string('bank_acc_name');
             $table->string('contact_number');
             $table->string('vat_number');
+            $table->date('license_expiry');
             $table->timestamps();
         });
 
@@ -60,8 +61,8 @@ class CreateCompanyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('License');
-        Schema::dropIfExists('Vat');
+//        Schema::dropIfExists('License');
+//        Schema::dropIfExists('Vat');
         Schema::dropIfExists('Companies');
     }
 }

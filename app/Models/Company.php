@@ -53,7 +53,8 @@ class Company extends Eloquent
 		'bank_acc_branch',
 		'bank_acc_name',
 		'contact_number',
-        'vat_number'
+        'vat_number',
+        'license_expiry'
 	];
 
 	public function user()
@@ -81,10 +82,10 @@ class Company extends Eloquent
 		return $this->hasMany(\App\Models\Invoice::class);
 	}
 
-	public function licenses()
-	{
-		return $this->hasMany(\App\Models\License::class, 'holder');
-	}
+//	public function licenses()
+//	{
+//		return $this->hasMany(\App\Models\License::class, 'holder');
+//	}
 
 	public function proformas()
 	{

@@ -25,7 +25,7 @@
           <tr>
               <td>{{$company->name}}</td>
               <td>{{$company->registration}}</td>
-              {{--<td></td> License Expiry Date --}}
+              <td>{{$company->license_expiry}} </td>
               <td>
                   <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-default pull-left" data-toggle="tooltip" rel="tooltip" title="Edit" style="margin-right: 3px;">
                       <i class="fa fa-edit"></i> </a>
