@@ -77,6 +77,7 @@ class CompanyController extends Controller
         //
 
         $company = Company::findOrFail($id);
+       // dd($company);
         return view('companies.edit', compact('company'));
     }
 
@@ -96,11 +97,12 @@ class CompanyController extends Controller
         $this->validate($request, [
             'name'=>'required|max:200',
             'registration'=>'required',
+            'license_expiry'=>'required',
             'email'=>'required'
 
         ]);
 
-        $input = $request->only(['name', 'registration', 'email']);
+        $input = $request->only(['name', 'registration', 'license_expiry', 'email']);
 
         $company->fill($input)->save();
 

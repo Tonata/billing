@@ -17,18 +17,19 @@
 
     <div class="row">
         <div class="col-md-6">
-            <!--<div class="form-group{{ $errors->has('exp') ? ' has-error' : '' }}"> -->
-                {!! Form::label('exp_date', 'License Expiry Date:') !!}
-                {{--create datetimepicker component--}}
-                {!! Form::component('dateTimePicker', 'components.timepicker.timepicker', ['name', 'id', 'attributes']) !!}
-                {!! Form::dateTimePicker('exp_date', 'exp_date-time-picker' , [])
-                 !!}
-                @if ($errors->has('exp_date'))
-                    <span class="help-block">
-                                <strong>{{ $errors->first('exp_date') }}</strong>
-                            </span>
-                @endif
-          <!--  </div> -->
+            {!! Form::label('license_expiry', 'License Expiry Date:') !!}
+            {{--create datetimepicker component--}}
+            {!! Form::component('dateTimePicker', 'components.timepicker.timepicker', ['name', 'id', 'attributes']) !!}
+            {!! Form::dateTimePicker('license_expiry', 'expiry-date-picker' , [])
+             !!}
+            {{--<div class="form-group{{ $errors->has('license_expiry') ? ' has-error' : '' }}">--}}
+              {{----}}
+                {{--@if ($errors->has('license_expiry'))--}}
+                    {{--<span class="help-block">--}}
+                                {{--<strong>{{ $errors->first('license_expiry') }}</strong>--}}
+                            {{--</span>--}}
+                {{--@endif--}}
+          {{--</div>--}}
         </div>
     </div>
     {!! Form::macro('SubmitBtn',function (){
