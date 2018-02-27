@@ -83,7 +83,7 @@ class Company extends Eloquent
 
 	public function licenses()
 	{
-		return $this->hasMany(\App\Models\License::class);
+		return $this->hasMany(\App\Models\License::class, 'holder');
 	}
 
 	public function proformas()

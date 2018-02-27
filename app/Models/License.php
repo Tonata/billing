@@ -25,23 +25,23 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class License extends Eloquent
 {
-	protected $casts = [
-		'idCompany' => 'int'
-	];
+//	protected $casts = [
+//		'idCompany' => 'int'
+//	];
 
 	protected $dates = [
-		'startDate',
-		'endDate'
+		'start_date',
+		'end_date'
 	];
 
 	protected $fillable = [
-		'startDate',
-		'endDate',
+		'start_date',
+		'end_date',
 		'idCompany'
 	];
 
 	public function company()
 	{
-		return $this->belongsTo(\App\Models\Company::class);
+		return $this->belongsTo(\App\Models\Company::class, 'holder');
 	}
 }

@@ -47,7 +47,7 @@
 
     <script>
         function ConfirmDelete(){
-            var x = confirm ("Are you sure you want to delete this membership?");
+            var x = confirm ("Are you sure you want to delete this company?");
             if (x)
                 return true;
             else
