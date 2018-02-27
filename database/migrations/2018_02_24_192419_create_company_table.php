@@ -18,11 +18,11 @@ class CreateCompanyTable extends Migration
             $table->string('name');
             $table->string('registration');
             $table->string('email');
-            $table->string('bank_acc_no');
-            $table->string('bank_acc_branch');
-            $table->string('bank_acc_name');
-            $table->string('contact_number');
-            $table->string('vat_number');
+            $table->string('bank_acc_no')->nullable();
+            $table->string('bank_acc_branch')->nullable();
+            $table->string('bank_acc_name')->nullable();
+            $table->string('contact_number')->nullable();
+            $table->string('vat_number')->nullable();
             $table->date('license_expiry');
             $table->timestamps();
         });

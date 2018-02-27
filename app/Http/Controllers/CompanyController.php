@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
+use Validator;
+
 
 class CompanyController extends Controller
 {
@@ -38,9 +40,9 @@ class CompanyController extends Controller
     public function create()
     {
         //
-        $companies = Company::all();
-     //  dd(value($companies));
-        return view('companies.create',['companies'=>$companies]);
+        //$companies = Company::all();
+        //  dd(value($companies));
+        return view('companies.create');
        // return view('companies.edit');
     }
 
@@ -52,7 +54,33 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:300',
+            'registration' => 'required|string|max:100',
+            'email' => 'required|string|min:0',
+            'license_expiry'  => 'date|min:0'
+        ]);
+
+        if ($validator->fails()){
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('companies.create');
+        }
+
+
+        $name = $request['name'];
+        $registration = $request['registration'];
+        $email = $request['email'];
+        $license_expiry = $request['license_expiry'];
+
+        $company = Company::create($request->only('name', 'registration', 'email', 'license_expiry'));
+
+        flash('Company, ' .$company->name. ' has been created successfully. ')->success();
+
+        return redirect()->route('companies.index');
     }
 
     /**
