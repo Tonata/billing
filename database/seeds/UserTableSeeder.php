@@ -16,15 +16,15 @@ class UserTableSeeder extends Seeder
         //
         $admin= new User();
         $admin->name = "Administrator";
-        $admin->email = "tonata93@gmail.com";
-        $admin->password = "password";
+        $admin->email = "admin@admin.com";
+        $admin->password = "pass";
         $admin->remember_token = str_random(10);
         $admin->save();
         $admin->assignRole(Role::where('name', 'Admin')->first());
 
         $company = new User();
         $company->name = "Comp";
-        $company->email = "company@company.com";
+        $company->email = "comp@company.com";
         $company->password = "company";
         $company->remember_token = str_random(10);
         $company->save();

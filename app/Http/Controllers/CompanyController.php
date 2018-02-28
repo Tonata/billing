@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Company;
 use Validator;
+use \Monolog\Handler\mail;
 
 
 class CompanyController extends Controller
@@ -46,6 +47,11 @@ class CompanyController extends Controller
        // return view('companies.edit');
     }
 
+    public function sendEmail($email, $subject , $header, $message){
+        mail($email, $subject,$message,$header);
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -81,17 +87,13 @@ class CompanyController extends Controller
 
         redirect()->route('companies.index');
 
-//        sendEmail($email, 'Company Registration', 'From info@invoicing.com', 'Welcome to our invoicing software. Please click on this link'. $email.
-//        ' to set your password. Your username is this email address.Thank You.');
+//      mail ($email, 'Company Registration', 'Welcome to our invoicing software. Please click on this link to set your password. Your username is this email address. Thank You.', 'From: info@invoicing.com');
 
         // url need to be an store of a new user
-        return view('auth.register', compact('name','email'));
+//        return view('auth.register', compact('name','email'));
     }
 
-    public function sendEmail($email, $subject , $header, $message){
-        mail($email, $subject,$message,$header);
 
-    }
     /**
      * Display the specified resource.
      *
