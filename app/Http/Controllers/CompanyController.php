@@ -70,7 +70,6 @@ class CompanyController extends Controller
                 ->with('companies.create');
         }
 
-
         $name = $request['name'];
         $registration = $request['registration'];
         $email = $request['email'];
@@ -80,9 +79,19 @@ class CompanyController extends Controller
 
         flash('Company, ' .$company->name. ' has been created successfully. ')->success();
 
-        return redirect()->route('companies.index');
+        redirect()->route('companies.index');
+
+//        sendEmail($email, 'Company Registration', 'From info@invoicing.com', 'Welcome to our invoicing software. Please click on this link'. $email.
+//        ' to set your password. Your username is this email address.Thank You.');
+
+        // url need to be an store of a new user
+        return view('auth.register', compact('name','email'));
     }
 
+    public function sendEmail($email, $subject , $header, $message){
+        mail($email, $subject,$message,$header);
+
+    }
     /**
      * Display the specified resource.
      *
@@ -153,7 +162,7 @@ class CompanyController extends Controller
         $company = Company::findOrFail($id);
         $company->delete();
 
-        flash('<div Company, <strong>'. $company->name . '</strong> deleted. </div>');
+        flash('<div> Company, <strong>'. $company->name . '</strong> deleted. </div>');
         return redirect()->route('companies.index');
 
     }

@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use \Spatie\Permission\Models\Role;
 
 class RegisterController extends Controller
 {
@@ -36,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+//        $this->middleware('guest');
     }
 
     /**
@@ -62,10 +63,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+//        $user->assignRole(Role::where('name', 'Company')->first());
+        $user->roles()->attach(Role::where('name', 'Company')->first());
+
+        return $user;
+
+    }
+
+    public function show(array $request){
+
+        $name = $request['name'];
+        $email = $request['email'];
+
+        return view('auth.register', compact('name','email'));
     }
 }

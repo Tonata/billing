@@ -3,7 +3,16 @@
         Companies
     @endslot
 
- <a href="{{ route('companies.create') }}" class="btn btn-success">Add Company</a>
+@section('custom-css')
+
+    <style>
+
+    </style>
+
+@endsection
+
+
+<a href="{{ route('companies.create') }}" class="btn btn-success">Add Company</a>
     {{--include the search input box--}}
     {{--@include('partials.search')--}}
     @slot('thead')
