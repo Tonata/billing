@@ -25,19 +25,19 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Vat extends Eloquent
 {
-	protected $table = 'vat';
-
-	protected $casts = [
-		'percentage' => 'float'
-	];
+//	protected $table = 'vat';
+//
+//	protected $casts = [
+//		'percentage' => 'float'
+//	];
 
 	protected $fillable = [
 		'name',
 		'percentage'
 	];
 
-	public function company()
-	{
-		return $this->belongsTo(\App\Models\Company::class);
-	}
+//	public function company()
+//	{
+//		return $this->belongsTo(\App\Models\Company::class);
+//	}
 }

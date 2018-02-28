@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CompanyTableSeeder::class);
 
 //        $this->call(LicenseTableSeeder::class);
+        $this->call(VatTableSeeder::class);
 
     }
 }

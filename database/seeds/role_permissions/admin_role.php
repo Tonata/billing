@@ -42,5 +42,12 @@ $admin_role->givePermissionTo(Permission::where('name', 'Delete Companies')->fir
 $admin_role->givePermissionTo(Permission::where('name', 'View Companies')->first());
 $admin_role->givePermissionTo(Permission::where('name', 'Update Companies')->first());
 
+// Vat
+$admin_role->givePermissionTo(Permission::where('name', 'Manage Vat')->first());
+$admin_role->givePermissionTo(Permission::where('name', 'Create Vat')->first());
+$admin_role->givePermissionTo(Permission::where('name', 'Delete Vat')->first());
+$admin_role->givePermissionTo(Permission::where('name', 'View Vat')->first());
+$admin_role->givePermissionTo(Permission::where('name', 'Update Vat')->first());
+
 
 

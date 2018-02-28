@@ -1,6 +1,6 @@
 <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-        <a class="nav-link" href="{{url('/')}}">
+        <a class="nav-link" href="{{url('/home')}}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
         </a>
@@ -16,11 +16,20 @@
 
     @endcan
 
-    @can('Manage Users')
+    {{--@can('Manage Users')--}}
+        {{--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">--}}
+            {{--<a class="nav-link" href="{{url('/users')}}">--}}
+                {{--<i class="fa fa-fw fa-users"></i>--}}
+                {{--<span class="nav-link-text">Users</span>--}}
+            {{--</a>--}}
+        {{--</li>--}}
+    {{--@endcan--}}
+
+    @can('Manage Vat')
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
-            <a class="nav-link" href="{{url('/users')}}">
-                <i class="fa fa-fw fa-users"></i>
-                <span class="nav-link-text">Users</span>
+            <a class="nav-link" href="{{url('/vat')}}">
+                <i class="fa fa-fw fa-calculator"></i>
+                <span class="nav-link-text">Vat</span>
             </a>
         </li>
     @endcan
