@@ -16,6 +16,36 @@
 
     @endcan
 
+    {{--@can('Manage Quotations')--}}
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Quotations">
+            <a class="nav-link" href="{{url('/quotations')}}">
+                <i class="fa fa-fw fa-file"></i>
+                <span class="nav-link-text">Quotations</span>
+            </a>
+        </li>
+
+    {{--@endcan--}}
+
+    {{--@can('Manage Invoices')--}}
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Invoices">
+        <a class="nav-link" href="{{url('/invoices')}}">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Invoices</span>
+        </a>
+    </li>
+
+    {{--@endcan--}}
+
+    {{--@can('Manage Accounts Receivable')--}}
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Accounts Receivable">
+        <a class="nav-link" href="{{url('/accounts')}}">
+            <i class="fa fa-fw fa-credit-card"></i>
+            <span class="nav-link-text">Accounts Receivable</span>
+        </a>
+    </li>
+
+    {{--@endcan--}}
+
     {{--@can('Manage Users')--}}
         {{--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">--}}
             {{--<a class="nav-link" href="{{url('/users')}}">--}}
@@ -26,7 +56,7 @@
     {{--@endcan--}}
 
     @can('Manage Vat')
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Vat">
             <a class="nav-link" href="{{url('/vat')}}">
                 <i class="fa fa-fw fa-calculator"></i>
                 <span class="nav-link-text">Vat</span>
