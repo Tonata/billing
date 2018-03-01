@@ -26,7 +26,7 @@
 
     {{--@endcan--}}
 
-    {{--@can('Manage Invoices')--}}
+    @can('Manage Invoices')
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Invoices">
         <a class="nav-link" href="{{url('/invoices')}}">
             <i class="fa fa-fw fa-file"></i>
@@ -34,7 +34,7 @@
         </a>
     </li>
 
-    {{--@endcan--}}
+    @endcan
 
     {{--@can('Manage Accounts Receivable')--}}
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Accounts Receivable">
