@@ -35,3 +35,17 @@ $company_role->givePermissionTo(Permission::where('name', 'Create Roles')->first
 $company_role->givePermissionTo(Permission::where('name', 'Delete Roles')->first());
 $company_role->givePermissionTo(Permission::where('name', 'View Roles')->first());
 $company_role->givePermissionTo(Permission::where('name', 'Update Roles')->first());
+
+// Customer Roles
+$company_role->givePermissionTo(Permission::where('name', 'Manage Customers')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Create Customers')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Delete Customers')->first());
+$company_role->givePermissionTo(Permission::where('name', 'View Customers')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Update Customers')->first());
+
+// Invoice Roles
+$company_role->givePermissionTo(Permission::where('name', 'Manage Invoices')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Create Invoices')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Delete Invoices')->first());
+$company_role->givePermissionTo(Permission::where('name', 'View Invoices')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Update Invoices')->first());

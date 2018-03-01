@@ -54,5 +54,17 @@ class PermissionTableSeeder extends Seeder
          */
 
         require_once 'model_permissions/vat_model.php';
+
+        /**
+         * customer permissions
+         */
+
+        require_once 'model_permissions/customer_model.php';
+
+        /**
+         * invoice permissions
+         */
+
+        require_once 'model_permissions/invoice_model.php';
     }
 }

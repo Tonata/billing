@@ -30,41 +30,41 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Quotation extends Eloquent
 {
-	protected $table = 'quotation';
-
-	protected $casts = [
-		'totalAmount' => 'float',
-		'totalVat' => 'float',
-		'totalAmountExclVat' => 'float',
-		'idCompany' => 'int',
-		'idCustomer' => 'int'
-	];
-
-	protected $dates = [
-		'quotationDate'
-	];
+//	protected $table = 'quotation';
+//
+//	protected $casts = [
+//		'totalAmount' => 'float',
+//		'totalVat' => 'float',
+//		'totalAmountExclVat' => 'float',
+//		'idCompany' => 'int',
+//		'idCustomer' => 'int'
+//	];
+//
+//	protected $dates = [
+//		'quotationDate'
+//	];
 
 	protected $fillable = [
 		'quotationDate',
 		'totalAmount',
 		'totalVat',
 		'totalAmountExclVat',
-		'idCompany',
-		'idCustomer'
+		'company_id',
+		'customer_id'
 	];
 
 	public function company()
 	{
-		return $this->belongsTo(\App\Models\Company::class, 'idCompany');
+		return $this->belongsTo(\App\Models\Company::class);
 	}
 
 	public function customer()
 	{
-		return $this->belongsTo(\App\Models\Customer::class, 'idCustomer');
+		return $this->belongsTo(\App\Models\Customer::class);
 	}
 
 	public function quotation_items()
 	{
-		return $this->hasMany(\App\Models\QuotationItem::class, 'idQuotation');
+		return $this->hasMany(\App\Models\QuotationItem::class);
 	}
 }

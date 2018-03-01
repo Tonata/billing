@@ -30,29 +30,29 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class InvoiceItem extends Eloquent
 {
-	protected $casts = [
-		'idInvoice' => 'int',
-		'qty' => 'int',
-		'unitPrice' => 'float',
-		'discount' => 'float',
-		'vatAmount' => 'float',
-		'vat' => 'float',
-		'vatAmountExclVat' => 'float'
-	];
+//	protected $casts = [
+//		'idInvoice' => 'int',
+//		'qty' => 'int',
+//		'unitPrice' => 'float',
+//		'discount' => 'float',
+//		'vatAmount' => 'float',
+//		'vat' => 'float',
+//		'vatAmountExclVat' => 'float'
+//	];
 
 	protected $fillable = [
-		'idInvoice',
+		'invoice_id',
 		'description',
 		'qty',
-		'unitPrice',
+		'unit_price',
 		'discount',
-		'vatAmount',
+		'vat_amount',
 		'vat',
-		'vatAmountExclVat'
+		'amount_excl_vat'
 	];
 
 	public function invoice()
 	{
-		return $this->belongsTo(\App\Models\Invoice::class, 'idInvoice');
+		return $this->belongsTo(\App\Models\Invoice::class);
 	}
 }

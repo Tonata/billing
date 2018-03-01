@@ -46,14 +46,14 @@
 
     {{--@endcan--}}
 
-    {{--@can('Manage Users')--}}
-        {{--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">--}}
-            {{--<a class="nav-link" href="{{url('/users')}}">--}}
-                {{--<i class="fa fa-fw fa-users"></i>--}}
-                {{--<span class="nav-link-text">Users</span>--}}
-            {{--</a>--}}
-        {{--</li>--}}
-    {{--@endcan--}}
+    @can('Manage Users')
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
+            <a class="nav-link" href="{{url('/users')}}">
+                <i class="fa fa-fw fa-users"></i>
+                <span class="nav-link-text">Users</span>
+            </a>
+        </li>
+    @endcan
 
     @can('Manage Vat')
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Vat">

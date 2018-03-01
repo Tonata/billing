@@ -33,32 +33,33 @@ class Customer extends Eloquent
 	protected $fillable = [
 		'name',
 		'email',
-		'contactNumber',
-		'postalAddress'
+		'contact_number',
+		'postal_address',
+        'physical_address'
 	];
 
 	public function accounts_receivables()
 	{
-		return $this->hasMany(\App\Models\AccountsReceivable::class, 'idCustomer');
+		return $this->hasMany(\App\Models\AccountsReceivable::class);
 	}
 
 	public function invoices()
 	{
-		return $this->hasMany(\App\Models\Invoice::class, 'idCustomer');
+		return $this->hasMany(\App\Models\Invoice::class);
 	}
 
 	public function proformas()
 	{
-		return $this->hasMany(\App\Models\Proforma::class, 'idCustomer');
+		return $this->hasMany(\App\Models\Proforma::class);
 	}
 
 	public function purchase_orders()
 	{
-		return $this->hasMany(\App\Models\PurchaseOrder::class, 'idCustomer');
+		return $this->hasMany(\App\Models\PurchaseOrder::class);
 	}
 
 	public function quotations()
 	{
-		return $this->hasMany(\App\Models\Quotation::class, 'idCustomer');
+		return $this->hasMany(\App\Models\Quotation::class);
 	}
 }

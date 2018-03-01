@@ -30,39 +30,39 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Invoice extends Eloquent
 {
-	protected $casts = [
-		'totalAmount' => 'float',
-		'totalVat' => 'float',
-		'totalAmountExclVat' => 'float',
-		'idCustomer' => 'int',
-		'idCompany' => 'int'
-	];
-
-	protected $dates = [
-		'invoiceDate'
-	];
+//	protected $casts = [
+//		'totalAmount' => 'float',
+//		'totalVat' => 'float',
+//		'totalAmountExclVat' => 'float',
+//		'idCustomer' => 'int',
+//		'idCompany' => 'int'
+//	];
+//
+//	protected $dates = [
+//		'invoiceDate'
+//	];
 
 	protected $fillable = [
-		'invoiceDate',
-		'totalAmount',
-		'totalVat',
-		'totalAmountExclVat',
-		'idCustomer',
-		'idCompany'
+		'invoice_date',
+		'total_amount',
+		'total_vat',
+		'total_amount_excl_vat',
+		'customer_id',
+		'company_id'
 	];
 
 	public function company()
 	{
-		return $this->belongsTo(\App\Models\Company::class, 'idCompany');
+		return $this->belongsTo(\App\Models\Company::class);
 	}
 
 	public function customer()
 	{
-		return $this->belongsTo(\App\Models\Customer::class, 'idCustomer');
+		return $this->belongsTo(\App\Models\Customer::class);
 	}
 
 	public function invoice_items()
 	{
-		return $this->hasMany(\App\Models\InvoiceItem::class, 'idInvoice');
+		return $this->hasMany(\App\Models\InvoiceItem::class);
 	}
 }
