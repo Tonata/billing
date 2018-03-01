@@ -57,9 +57,9 @@ class Company extends Eloquent
         'license_expiry'
 	];
 
-	public function user()
+	public function users()
 	{
-		return $this->belongsTo(\App\User::class);
+		return $this->hasMany(\App\User::class);
 	}
 
 	public function document()

@@ -31,6 +31,12 @@ class CompanyTableSeeder extends Seeder
         $company_1->license_expiry = $end_date;
         $company_1->save();
 
+        $found = Company::find(1);
+        $found->users()->createMany([
+            ["name" => "Thomas", "email"=> "thomas@del.com", "password" => "pass"],
+            ["name" => "Maria", "email"=> "maria@del.com", "password" => "pass"],
+        ]);
+
         $company_1 = new Company();
         $company_1->name = 'PriceWaterhouseCoopers';
         $company_1->registration = '09876543';
