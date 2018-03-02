@@ -66,5 +66,11 @@ class PermissionTableSeeder extends Seeder
          */
 
         require_once 'model_permissions/invoice_model.php';
+
+        /**
+         * quotation permissions
+         */
+
+        require_once 'model_permissions/quotation_model.php';
     }
 }

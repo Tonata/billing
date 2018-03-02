@@ -47,10 +47,10 @@ class CompanyController extends Controller
        // return view('companies.edit');
     }
 
-    public function sendEmail($email, $subject , $header, $message){
-        mail($email, $subject,$message,$header);
-
-    }
+//    public function sendEmail($email, $subject , $header, $message){
+//        mail($email, $subject,$message,$header);
+//
+//    }
 
     /**
      * Store a newly created resource in storage.
@@ -136,7 +136,7 @@ class CompanyController extends Controller
         $this->validate($request, [
             'name'=>'required|max:200',
             'registration'=>'required',
-            'license_expiry'=>'required',
+            'license_expiry'=>'date',
             'email'=>'required'
 
         ]);

@@ -49,3 +49,10 @@ $company_role->givePermissionTo(Permission::where('name', 'Create Invoices')->fi
 $company_role->givePermissionTo(Permission::where('name', 'Delete Invoices')->first());
 $company_role->givePermissionTo(Permission::where('name', 'View Invoices')->first());
 $company_role->givePermissionTo(Permission::where('name', 'Update Invoices')->first());
+
+// Quotation Roles
+$company_role->givePermissionTo(Permission::where('name', 'Manage Quotations')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Create Quotations')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Delete Quotations')->first());
+$company_role->givePermissionTo(Permission::where('name', 'View Quotations')->first());
+$company_role->givePermissionTo(Permission::where('name', 'Update Quotations')->first());

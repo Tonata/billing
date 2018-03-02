@@ -23,9 +23,9 @@ class UserTableSeeder extends Seeder
         $admin->assignRole(Role::where('name', 'Admin')->first());
 
         $company = new User();
-        $company->name = "Comp";
-        $company->email = "comp@company.com";
-        $company->password = "company";
+        $company->name = "Komeho Investments";
+        $company->email = "info@komeho.com";
+        $company->password = "pass";
         $company->remember_token = str_random(10);
         $company->save();
 //        $admin->creator()->save($company);

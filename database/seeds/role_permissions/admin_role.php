@@ -15,11 +15,11 @@ $admin_role->save();
 $admin_role->givePermissionTo(Permission::where('name', 'Administer roles & permissions')->first());
 
 // System Users
-$admin_role->givePermissionTo(Permission::where('name', 'Manage Users')->first());
-$admin_role->givePermissionTo(Permission::where('name', 'Create Users')->first());
-$admin_role->givePermissionTo(Permission::where('name', 'Delete Users')->first());
-$admin_role->givePermissionTo(Permission::where('name', 'View Users')->first());
-$admin_role->givePermissionTo(Permission::where('name', 'Update Users')->first());
+//$admin_role->givePermissionTo(Permission::where('name', 'Manage Users')->first());
+//$admin_role->givePermissionTo(Permission::where('name', 'Create Users')->first());
+//$admin_role->givePermissionTo(Permission::where('name', 'Delete Users')->first());
+//$admin_role->givePermissionTo(Permission::where('name', 'View Users')->first());
+//$admin_role->givePermissionTo(Permission::where('name', 'Update Users')->first());
 
 // System Permissions
 $admin_role->givePermissionTo(Permission::where('name', 'Manage Permissions')->first());

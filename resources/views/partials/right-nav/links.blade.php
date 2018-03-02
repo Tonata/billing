@@ -16,7 +16,7 @@
 
     @endcan
 
-    {{--@can('Manage Quotations')--}}
+    @can('Manage Quotations')
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Quotations">
             <a class="nav-link" href="{{url('/quotations')}}">
                 <i class="fa fa-fw fa-file"></i>
@@ -24,7 +24,7 @@
             </a>
         </li>
 
-    {{--@endcan--}}
+    @endcan
 
     @can('Manage Invoices')
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Invoices">
@@ -36,7 +36,7 @@
 
     @endcan
 
-    {{--@can('Manage Accounts Receivable')--}}
+    @can('Manage Accounts Receivable')
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Accounts Receivable">
         <a class="nav-link" href="{{url('/accounts')}}">
             <i class="fa fa-fw fa-credit-card"></i>
@@ -44,7 +44,7 @@
         </a>
     </li>
 
-    {{--@endcan--}}
+    @endcan
 
     @can('Manage Users')
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">

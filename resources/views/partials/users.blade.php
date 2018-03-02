@@ -15,14 +15,14 @@
 
 @slot('thead')
     <th>Name</th>
-    <th>Surname</th>
+    {{--<th>Surname</th>--}}
     <th>Email</th>
     <th>Operations</th>
 @endslot
 
 @slot('tfoot')
     <th>Name</th>
-    <th>Surname</th>
+    {{--<th>Surname</th>--}}
     <th>Email</th>
     <th>Operations</th>
 @endslot
@@ -31,12 +31,12 @@
     @foreach($users as $user)
         <tr>
             <td>{{$user->name}}</td>
-            <td>{{$user->surname}}</td>
+            {{--<td>{{$user->surname}}</td>--}}
             <td>{{$user->email}} </td>
             <td>
-                <a href="{{ route('companies.edit', $user->id) }}" class="btn btn-default pull-left" data-toggle="tooltip" rel="tooltip" title="Edit" style="margin-right: 3px;">
+                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-default pull-left" data-toggle="tooltip" rel="tooltip" title="Edit" style="margin-right: 3px;">
                     <i class="fa fa-edit"></i> </a>
-                {!! Form::open(['method' => 'DELETE', 'route' => ['companies.destroy', $user->id], 'id' => 'delete-form', 'onsubmit' => 'return ConfirmDelete()' ]) !!}
+                {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id], 'id' => 'delete-form', 'onsubmit' => 'return ConfirmDelete()' ]) !!}
                 {!! Form::macro('SubmitBtn',function (){
                     return '<button type="submit" class="btn btn-default"> <i class="fa fa-remove" data-toggle="tooltip" rel="tooltip" title="Delete" style="color: red;"></i> </button>';
                 }) !!}

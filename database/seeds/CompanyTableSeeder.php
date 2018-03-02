@@ -31,23 +31,23 @@ class CompanyTableSeeder extends Seeder
         $company_1->license_expiry = $end_date;
         $company_1->save();
 
-        $found = Company::find(1);
-        $found->users()->createMany([
-            ["name" => "Thomas", "email"=> "thomas@del.com", "password" => "pass"],
-            ["name" => "Maria", "email"=> "maria@del.com", "password" => "pass"],
-        ]);
+        $company_2 = new Company();
+        $company_2->name = 'Komeho Investments';
+        $company_2->registration = '09876543';
+        $company_2->email = 'info@komeho.com';
+        $company_2->bank_acc_no = '123456789';
+        $company_2->bank_acc_branch = 'Windhoek Main';
+        $company_2->bank_acc_name = 'FNB';
+        $company_2->contact_number = '061 223 9900';
+        $company_2->vat_number = '123005TY';
+        $company_2->license_expiry = $end_date1;
+        $company_2->save();
 
-        $company_1 = new Company();
-        $company_1->name = 'PriceWaterhouseCoopers';
-        $company_1->registration = '09876543';
-        $company_1->email = 'info@pwc.com';
-        $company_1->bank_acc_no = '123456789';
-        $company_1->bank_acc_branch = 'Windhoek Main';
-        $company_1->bank_acc_name = 'FNB';
-        $company_1->contact_number = '061 223 9900';
-        $company_1->vat_number = '123005TY';
-        $company_1->license_expiry = $end_date1;
-        $company_1->save();
+        $found = Company::find(2);
+        $found->users()->createMany([
+            ["name" => "Thomas Edison", "email"=> "thomas@komeho.com", "password" => "pass"],
+            ["name" => "Maria Angula","email"=> "maria@komeho.com", "password" => "pass"],
+        ]);
 //
 //        $license = new License();
 //        $license->start_date = $start_date;
