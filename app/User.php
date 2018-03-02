@@ -41,4 +41,9 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
+    public static function findUsersBy($field, $value)
+    {
+        return User::where($field, $value);
+    }
+
 }

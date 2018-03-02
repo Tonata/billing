@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -15,7 +16,10 @@ class UserController extends Controller
     public function index()
     {
         //
-        $users = User::all();
+        $id = Auth::user()->id;
+        $current_user = User::find($id);
+
+        $users = User::where('company_id', '=', $current_user->company_id )->get();
 
         return view('users.index', compact('users'))->with('tab', 'view_companies');
     }
@@ -28,6 +32,7 @@ class UserController extends Controller
     public function create()
     {
         //
+        return view ('users.create');
     }
 
     /**

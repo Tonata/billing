@@ -17,6 +17,7 @@
     <th>Name</th>
     {{--<th>Surname</th>--}}
     <th>Email</th>
+    {{--<th>Menu Access</th>--}}
     <th>Operations</th>
 @endslot
 
@@ -24,6 +25,7 @@
     <th>Name</th>
     {{--<th>Surname</th>--}}
     <th>Email</th>
+    {{--<th>Menu Access</th>--}}
     <th>Operations</th>
 @endslot
 
