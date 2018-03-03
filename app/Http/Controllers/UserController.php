@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use \Spatie\Permission\Models\Permission;
+use \Spatie\Permission\Models\Role;
+use Validator;
 
 class UserController extends Controller
 {
@@ -19,11 +21,11 @@ class UserController extends Controller
         //
         $id = Auth::user()->id;
         $current_user = User::find($id);
-        $permissions = Permission::pluck('name', 'id')->toarray();
+//        $permissions = Permission::pluck('name', 'id')->toarray();
 
         $users = User::where('company_id', '=', $current_user->company_id )->get();
 
-        return view('users.index', compact('users', 'permissions'))->with('tab', 'view_users');
+        return view('users.index', compact('users'))->with('tab', 'view_users');
     }
 
     /**
@@ -49,7 +51,49 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = Auth::user()->id;
+        $current_user = User::find($id);
+        $company_id = $current_user->company_id;
+
+        // Validate
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:300',
+            'email' => 'required|string|max:300',
+            'permissions' => 'required'
+        ]);
+
+        if ($validator->fails()){
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput()
+                ->with('users.create');
+        }
+
+        $name = $request['name'];
+        $email = $request['email'];
+        $permissions[] = $request['$permissions'];
+
+        //dd($company_id);
+
+        $user = User::create(["name"=> $name, "email"=> $email, "company_id"=>$company_id]);
+       // $user->company_id = $company_id;
+
+//        $role = new Role();
+//        $role->name = $name;
+//        $role->guard_name = 'web';
+//        $role->save();
+//        foreach($permissions as $permission){
+//             dd($permission);
+//            $role->givePermissionTo(Permission::where('name', $permission->name)->first());
+//        }
+//
+//        $user->assignRole(Role::create($role));
+
+        flash('User, ' .$user->name. ' has been created successfully. ')->success();
+
+        redirect()->route('users.index');
+
     }
 
     /**
