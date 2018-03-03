@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use \Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
 {
@@ -18,10 +19,11 @@ class UserController extends Controller
         //
         $id = Auth::user()->id;
         $current_user = User::find($id);
+        $permissions = Permission::pluck('name', 'id')->toarray();
 
         $users = User::where('company_id', '=', $current_user->company_id )->get();
 
-        return view('users.index', compact('users'))->with('tab', 'view_companies');
+        return view('users.index', compact('users', 'permissions'))->with('tab', 'view_users');
     }
 
     /**
@@ -32,7 +34,11 @@ class UserController extends Controller
     public function create()
     {
         //
-        return view ('users.create');
+        $permissions = Permission::all();
+//        //implode($permissions);
+//        return view ('users.create', compact('permissions'));
+        return view ('users.create', ['permissions'=> $permissions]);
+//        return view ('users.create');
     }
 
     /**
