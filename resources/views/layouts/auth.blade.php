@@ -33,7 +33,7 @@
                     {{--Invoicing System--}}
                 {{--</a>--}}
 
-                <h2 style="text-align: center; margin: 0px 50px 0 400px; padding-top: 0px; "> INVOICING SYSTEM</h2>
+                {{--<h2 style="text-align: center; margin: 0px 50px 0 400px; padding-top: 0px; "> INVOICING SYSTEM</h2>--}}
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
