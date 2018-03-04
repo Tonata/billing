@@ -78,6 +78,8 @@
             @endif
 
             <div class="content">
+                {{--{{ HTML::image('images/invoice-animation-dribbble.gif', 'alt text', array('class' => 'css-class')) }}--}}
+                <img src="images/invoice-animation-dribbble.gif">
                 <div class="title m-b-md">
                     INVOICING SYSTEM
                 </div>

@@ -20,18 +20,20 @@
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+                {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">--}}
+                    {{--<span class="sr-only">Toggle Navigation</span>--}}
+                    {{--<span class="icon-bar"></span>--}}
+                    {{--<span class="icon-bar"></span>--}}
+                    {{--<span class="icon-bar"></span>--}}
+                {{--</button>--}}
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
                     {{--{{ config('app.name', 'Invoicing System') }}--}}
-                    Invoicing System
-                </a>
+                    {{--Invoicing System--}}
+                {{--</a>--}}
+
+                <h2 style="text-align: center; margin: 0px 50px 0 400px; padding-top: 0px; "> INVOICING SYSTEM</h2>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">

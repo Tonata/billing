@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card card-default">
+            <div class="card card-default text-center" style="margin-left: auto; margin-right: auto; justify-items: center">
                 <div class="card-header">Login</div>
 
                 <div class="card-body">

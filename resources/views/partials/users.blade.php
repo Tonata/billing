@@ -33,6 +33,10 @@
     @foreach($users as $user)
         <tr>
             <td>{{$user->name}}</td>
+            {{--<td>{{$user->getPermissionsViaRoles()}}</td>--}}
+            {{--<?--}}
+                {{--$user->getPermissionsViaRoles();--}}
+            {{--?>--}}
             {{--<td>{{$user->surname}}</td>--}}
             <td>{{$user->email}} </td>
             <td>
