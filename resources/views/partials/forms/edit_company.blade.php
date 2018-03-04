@@ -1,5 +1,5 @@
 <div class="col-md-8">
-    {{ Form::model($company, array('route' => array('companies.update', $company->id), 'method' => 'PUT')) }}
+    {{ Form::model($company, array('route' => array('companies.update', $company->id), 'method' => 'PATCH')) }}
     <div class="form-group">
         {!! Form::label('name', 'Name:') !!}
         {!! Form::text('name',null, array('class' => 'form-control', 'required')) !!}
