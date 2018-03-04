@@ -85,7 +85,7 @@ class CompanyController extends Controller
 
         flash('Company, ' .$company->name. ' has been created successfully. ')->success();
 
-        redirect()->route('companies.index');
+        return redirect()->route('companies.index');
 
 //      mail ($email, 'Company Registration', 'Welcome to our invoicing software. Please click on this link to set your password. Your username is this email address. Thank You.', 'From: info@invoicing.com');
 
