@@ -72,27 +72,27 @@ class UserController extends Controller
 
         $name = $request['name'];
         $email = $request['email'];
-        $permissions[] = $request['$permissions'];
+        $permissions[] = $request['permissions'];
 
-        //dd($company_id);
+//        dd($permissions[]);
 
         $user = User::create(["name"=> $name, "email"=> $email, "company_id"=>$company_id]);
-       // $user->company_id = $company_id;
 
-//        $role = new Role();
-//        $role->name = $name;
-//        $role->guard_name = 'web';
-//        $role->save();
-//        foreach($permissions as $permission){
-//             dd($permission);
-//            $role->givePermissionTo(Permission::where('name', $permission->name)->first());
-//        }
-//
-//        $user->assignRole(Role::create($role));
+        $role = new Role();
+        $role->name = $name;
+        $role->guard_name = 'web';
+        $role->save();
+        foreach($permissions as $permission){
+            $role->givePermissionTo($permission);
+//            $user->givePermissionTo($permission);
+        }
+
+        $user->assignRole($role);
+
 
         flash('User, ' .$user->name. ' has been created successfully. ')->success();
 
-        redirect()->route('users.index');
+        return redirect()->route('users.index');
 
     }
 

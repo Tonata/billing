@@ -55,7 +55,8 @@
              {{--!!}--}}
 
             {{--{!! Form::select('permissions[]', implode("','", $permissions) , [],['class'=>'selectpicker form-control show-menu-arrow', 'data-live-search="true"', 'data-width="100%"', 'title="Choose your menu access items"', 'multiple']) !!}--}}
-            @foreach($permissions as $permission)
+
+                @foreach($permissions as $permission)
                 {{ Form::checkbox('permissions[]',  $permission->id ) }}
                 {{ Form::label($permission->name, ucfirst($permission->name)) }}<br>
 
